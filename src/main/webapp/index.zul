@@ -1,0 +1,30 @@
+<zk>
+	<style src="/css/button.css" />
+	<window title="Find People" width="600px" border="normal"
+	apply="org.zk29.FindController">
+	<hbox align="center">
+		Keyword:
+		<textbox id="keywordBox" />
+		<button id="findButton" label="Find" />
+	</hbox>
+	<listbox id="peopleListbox" rows="3" emptyMessage="No books found in the result">
+		<listhead>
+			<listheader label="name" width="20%"/>
+			<listheader label="lastName" width="20%" />
+		</listhead>
+		<template name="model">
+			<listitem>
+				<listcell label="${each.name}"></listcell>
+				<listcell label="${each.lastName}"></listcell>
+			</listitem>
+		</template>
+	</listbox>
+	<hlayout style="margin-top:20px" width="100%">
+		<image id="previewImage" width="250px" />
+		<vlayout hflex="1">
+			<label id="nameLabel" />
+			<label id="lastNameLabel" />
+		</vlayout>
+	</hlayout>
+	</window>
+</zk>
